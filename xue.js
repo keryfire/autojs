@@ -1,3 +1,12 @@
+// @ts-ignore
+console.show(true);
+sleep(300);
+// 修改控制台位置
+console.setPosition(0, 100);    
+// 修改控制台大小
+console.setSize(device.width/2, device.height / 4);
+
+
 // 在控制台输出 开始
 toastLog("开始");
 
@@ -100,14 +109,14 @@ function 播放电台(){
         text_w.parent().click();
         sleep(随机等待(1));
         console.log("点击播放！");
-        let w2 = id("lay_state_icon").findOne(8000);
+        let w2 = id("v_paused").findOne(8000);
         sleep(随机等待(1));
         if(w2 != null){
             // @ts-ignore
-            w2.parent().parent().click();
+            w2.click();
             sleep(随机等待(1));
-            back();
-            sleep(随机等待(1));
+            //back();
+            //sleep(随机等待(1));
         }
         else{
             console.error("未发现播放按钮");
